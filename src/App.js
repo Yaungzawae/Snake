@@ -20,7 +20,7 @@ const server = app.listen("8080", () => {
 
 const io = require("socket.io")(server, {
   cors: {
-    transports: ["websocket", "polling"],
+    transports: ["websocket"],
   },
   allowEIO3: true,
 });
@@ -53,7 +53,7 @@ io.on("connection", (socket) => {
     }
   }
   function createGameHandler() {
-    const roomId = makeid(8);
+    const roomId = makeid(4);
     if (db.hasOwnProperty(roomId)) {
       createRoomHandler();
     } else {
