@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Snake</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link rel="stylesheet" href="index.css">
+<style>
+#gameScreen {
+  display: none;
+}
+</style>
+<script src="hammer.js"></script>
+</head>
+<body>
+  <section class="vh-100">
+    <div class="container h-100">
+
+      <div id="initialScreen" class="h-100">
+        <div class="d-flex flex-column align-items-center justify-content-center h-50">
+            <h1>Snake</h1>
+            <button
+              type="submit"
+              class="btn btn-success"
+              id="newGameButton"
+            >
+              Create New Game
+            </button>
+            <div>OR</div>
+            <div class="form-group">
+              <input type="text" placeholder="Enter Game Code" id="gameCodeInput"/>
+            </div>
+            <p id="error" class="text-danger text-center"></p>
+            <button
+              type="submit"
+              class="btn btn-success"
+              id="joinGameButton"
+            >
+              Join Game
+            </button>
+        </div>
+      </div>
+
+      <div id="gameScreen" class="">
+        <div class="d-flex flex-column align-items-center pt-1 h-25 text-center">
+          <p>Your game code is: <span id="gameCodeDisplay" class="font-weight-bold"></span></p>
+          <div><span  class="text-success mr-5">Player One: <span id="playerOneScore"></span></span>  <span class="text-primary ml-5">Player Two: <span id="playerTwoScore"></span></span></div>
+          <h1 id="result"></h1>
+        </div>
+        <div class="canvas-wrapper"> 
+          <canvas id="canvas"></canvas>
+          <button id="reset" class="btn btn-dark mx-auto">Reset</button>
+          <button id="leave" class="btn btn-danger mx-auto">Leave</button>
+      </div>
+
+    </div>
+  </section>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+  <script src="index.js"></script>
+</body>
+</html>
